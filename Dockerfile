@@ -1,5 +1,5 @@
-# Snort in Docker
-FROM ubuntu:14.04.4
+# Snort 
+FROM ubuntu:18.04
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
