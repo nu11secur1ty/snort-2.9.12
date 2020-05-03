@@ -20,14 +20,15 @@ Attach the snort in container to have full access to the network
 docker run -t -i nu11secur1ty/snort /bin/bash
 ```
 - - - Dirrect to `/opt/`
+
 ```
-$ docker run -it --rm --net=host nu11secur1ty/snort /bin/bash
+docker run -it --rm --net=host nu11secur1ty/snort /bin/bash
 ```
 
 Or you may need to add --cap-add=NET_ADMIN or --privileged (unsafe)
 
 ```
-$ docker run -it --rm --net=host --cap-add=NET_ADMIN nu11secur1ty/snort /bin/bash
+docker run -it --rm --net=host --cap-add=NET_ADMIN nu11secur1ty/snort /bin/bash
 ```
 
 
@@ -41,7 +42,9 @@ For testing it's work. Add this rule in the file at `/etc/snort/rules/local.rule
 
 Running Snort and alerts output to the console (screen).
 
+
 - - - ***NOTE:*** Use your network interface
+
 ```
 $ snort -i wlan0 -c /etc/snort/etc/snort.conf -A console
 ```
@@ -49,7 +52,7 @@ $ snort -i wlan0 -c /etc/snort/etc/snort.conf -A console
 Running Snort and alerts output to the UNIX socket
 
 ```
-$ snort -i eth0 -A unsock -l /tmp -c /etc/snort/etc/snort.conf
+snort -i eth0 -A unsock -l /tmp -c /etc/snort/etc/snort.conf
 ```
 
 Ping in the container then the alert message will show on the console
