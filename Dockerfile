@@ -7,6 +7,7 @@ RUN apt update && \
     apt install -y \
         python-setuptools \
         python-pip \
+        net-tools \
         python-dev \
         wget \
         build-essential \
