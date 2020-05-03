@@ -1,7 +1,7 @@
 # Snort in Docker
 FROM ubuntu:14.04.4
 
-MAINTAINER John Lin <linton.tw@gmail.com>
+MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
 RUN apt-get update && \
     apt-get install -y \
