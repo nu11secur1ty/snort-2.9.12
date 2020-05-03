@@ -9,6 +9,12 @@ The Snort Version 2.9.8.0 and DAQ Version 2.0.6
 You may need to run as `sudo`
 Attach the snort in container to have full access to the network
 
+- - - Login:
+
+```bash
+docker run -t -i nu11secur1ty/snort /bin/bash
+```
+- - - Dirrect to `/opt/`
 ```
 $ docker run -it --rm --net=host nu11secur1ty/snort /bin/bash
 ```
