@@ -27,13 +27,13 @@ RUN apt update && \
 # Define working directory.
 WORKDIR /opt
 
-ENV DAQ_VERSION 2.0.7
+ENV DAQ_VERSION 2.0.6
 RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz \
     && tar xvfz daq-${DAQ_VERSION}.tar.gz \
     && cd daq-${DAQ_VERSION} \
     && ./configure; make; make install
 
-ENV SNORT_VERSION 2.9.16
+ENV SNORT_VERSION 2.9.8.2
 RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz \
     && tar xvfz snort-${SNORT_VERSION}.tar.gz \
     && cd snort-${SNORT_VERSION} \
