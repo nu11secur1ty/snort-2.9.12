@@ -3,8 +3,8 @@ FROM ubuntu:18.04
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt update && \
+    apt install -y \
         python-setuptools \
         python-pip \
         python-dev \
@@ -79,7 +79,7 @@ RUN mkdir -p /var/log/snort && \
     touch /etc/snort/rules/white_list.rules /etc/snort/rules/black_list.rules
 
 # Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     /opt/snort-${SNORT_VERSION}.tar.gz /opt/daq-${DAQ_VERSION}.tar.gz
 
 
