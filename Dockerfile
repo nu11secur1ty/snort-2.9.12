@@ -5,6 +5,7 @@ MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
 RUN apt update && \
     apt install -y \
+        gcc \
         net-tools \
         python-setuptools \
         python-pip \
