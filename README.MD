@@ -28,6 +28,8 @@ $ docker run -it --rm --net=host --cap-add=NET_ADMIN nu11secur1ty/snort /bin/bas
 
 # Snort Usage
 
+![](https://github.com/nu11secur1ty/snort/blob/master/usage/snort.gif)
+
 For testing it's work. Add this rule in the file at `/etc/snort/rules/local.rules`
 
 `alert icmp any any -> any any (msg:"Pinging...";sid:1000004;)`
