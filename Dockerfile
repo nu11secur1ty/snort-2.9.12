@@ -29,15 +29,12 @@ RUN apt update && \
 # Define working directory.
 WORKDIR /opt
 
-# alocal
-#RUN wget https://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz
-#    && tar -xzvf automake-1.15.tar.gz \
-#RUN cd automake-1.15 \
-#    && ./configure --prefix=/opt/aclocal-1.15; make; 
-#RUN mkdir -p /opt \
-#    && make install 
-#RUN export PATH=/opt/aclocal-1.15/bin:$PATH 
-    
+# LuaJIT
+RUN wget http://luajit.org/download/LuaJIT-2.0.5.tar.gz
+    && tar zxf LuaJIT-2.0.5.tar.gz
+    && cd LuaJIT-2.0.5
+    && make
+    && make PREFIX=/home/myself/lj2; make install PREFIX=/home/myself/lj2
 
 ENV DAQ_VERSION 2.0.7
 RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz \
