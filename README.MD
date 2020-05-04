@@ -6,7 +6,7 @@
 
 [Snort](https://www.snort.org/) in Docker for Network Functions Virtualization (NFV)
 
-The Snort Version 2.9.8.0 and DAQ Version 2.0.6
+The Snort Version 2.9.12 and DAQ Version 2.0.6
 
 - - - Maintenance and testing on 2.9.16
 
