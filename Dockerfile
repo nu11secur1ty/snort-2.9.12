@@ -22,26 +22,18 @@ RUN apt update && \
         libnetfilter-queue1 \
         tcpdump \
         unzip \
-        luajit \
-        automake-1.15 \
         vim && pip install -U pip dpkt snortunsock
 
 # Define working directory.
 WORKDIR /opt
 
-# LuaJIT
-RUN wget http://luajit.org/download/LuaJIT-2.0.5.tar.gz
-    && tar zxf LuaJIT-2.0.5.tar.gz \
-    && cd LuaJIT-2.0.5; make 
-RUN mkdir -p /opt/luajitinstall; make PREFIX=/opt/luajitinstall/lj2; make install PREFIX=/opt/luajitinstall/lj2
-
-ENV DAQ_VERSION 2.0.7
+ENV DAQ_VERSION 2.0.6
 RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz \
     && tar xvfz daq-${DAQ_VERSION}.tar.gz \
     && cd daq-${DAQ_VERSION} \
     && ./configure; make; make install
 
-ENV SNORT_VERSION 2.9.16
+ENV SNORT_VERSION 2.9.12
 RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz \
     && tar xvfz snort-${SNORT_VERSION}.tar.gz \
     && cd snort-${SNORT_VERSION} \
