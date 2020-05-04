@@ -1,4 +1,4 @@
-# Snort 
+# Snort 2.9.12
 FROM ubuntu:18.04
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
