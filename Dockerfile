@@ -34,8 +34,8 @@ RUN wget https://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz
     && ./configure  --prefix=/opt/aclocal-1.15 \
     && make \
     && mkdir -p /opt \
-    && make install \
-    && export PATH=/opt/aclocal-1.15/bin:$PATH 
+    && make install 
+RUN export PATH=/opt/aclocal-1.15/bin:$PATH 
     
 
 ENV DAQ_VERSION 2.0.7
