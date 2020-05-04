@@ -32,9 +32,8 @@ WORKDIR /opt
 # LuaJIT
 RUN wget http://luajit.org/download/LuaJIT-2.0.5.tar.gz
     && tar zxf LuaJIT-2.0.5.tar.gz \
-    && cd LuaJIT-2.0.5 \
-    && make \
-    && mkdir -p /opt/luajitinstall \
+    && cd LuaJIT-2.0.5; make 
+RUN mkdir -p /opt/luajitinstall \
     && make PREFIX=/opt/luajitinstall/lj2; make install PREFIX=/opt/luajitinstall/lj2
 
 ENV DAQ_VERSION 2.0.7
