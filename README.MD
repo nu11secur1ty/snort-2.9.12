@@ -17,12 +17,12 @@ Attach the snort in container to have full access to the network
 - - - Login:
 
 ```bash
-docker run -t -i nu11secur1ty/snort /bin/bash
+docker run -t -i nu11secur1ty/snort-2.9.12 /bin/bash
 ```
 - - - Dirrect to `/opt/`
 
 ```
-docker run -it --rm --net=host nu11secur1ty/snort /bin/bash
+docker run -it --rm --net=host nu11secur1ty/snort-2.9.12 /bin/bash
 ```
 
 Or you may need to add --cap-add=NET_ADMIN or --privileged (unsafe)
@@ -52,7 +52,7 @@ $ snort -i wlan0 -c /etc/snort/etc/snort.conf -A console
 Running Snort and alerts output to the UNIX socket
 
 ```
-snort -i eth0 -A unsock -l /tmp -c /etc/snort/etc/snort.conf
+snort -i wlan0 -A unsock -l /tmp -c /etc/snort/etc/snort.conf
 ```
 
 Ping in the container then the alert message will show on the console
