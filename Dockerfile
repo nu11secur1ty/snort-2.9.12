@@ -30,7 +30,7 @@ WORKDIR /opt
 # alocal
 RUN wget https://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz
     && tar -xzvf automake-1.15.tar.gz \
-    && cd automake-1.15 \
+RUN cd automake-1.15 \
     && ./configure --prefix=/opt/aclocal-1.15; make; 
 RUN mkdir -p /opt \
     && make install 
