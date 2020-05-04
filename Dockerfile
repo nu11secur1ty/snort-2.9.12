@@ -27,6 +27,14 @@ RUN apt update && \
 # Define working directory.
 WORKDIR /opt
 
+RUN wget https://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz
+    && tar -xzvf automake-1.15.tar.gz \
+    && cd automake-1.15 \
+    && ./configure  --prefix=/opt/aclocal-1.15 \
+    && make \
+    && mkdir -p /opt \
+    && make install
+
 ENV DAQ_VERSION 2.0.7
 RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz \
     && tar xvfz daq-${DAQ_VERSION}.tar.gz \
@@ -37,7 +45,6 @@ ENV SNORT_VERSION 2.9.16
 RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz \
     && tar xvfz snort-${SNORT_VERSION}.tar.gz \
     && cd snort-${SNORT_VERSION} \
-    && autoreconf -vfi \
     && ./configure --enable-sourcefire; make; make install
 
 RUN ldconfig
