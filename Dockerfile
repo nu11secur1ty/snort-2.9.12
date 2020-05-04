@@ -27,13 +27,16 @@ RUN apt update && \
 # Define working directory.
 WORKDIR /opt
 
+# alocal
 RUN wget https://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz
     && tar -xzvf automake-1.15.tar.gz \
     && cd automake-1.15 \
     && ./configure  --prefix=/opt/aclocal-1.15 \
     && make \
     && mkdir -p /opt \
-    && make install
+    && make install \
+    && export PATH=/opt/aclocal-1.15/bin:$PATH 
+    
 
 ENV DAQ_VERSION 2.0.7
 RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz \
