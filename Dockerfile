@@ -22,6 +22,7 @@ RUN apt update && \
         libnetfilter-queue1 \
         tcpdump \
         unzip \
+        luajit \
         automake-1.15 \
         vim && pip install -U pip dpkt snortunsock
 
@@ -48,7 +49,7 @@ ENV SNORT_VERSION 2.9.16
 RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz \
     && tar xvfz snort-${SNORT_VERSION}.tar.gz \
     && cd snort-${SNORT_VERSION} \
-    && ./configure; make; make install
+    && ./configure --enable-sourcefire; make; make install
 
 RUN ldconfig
 
