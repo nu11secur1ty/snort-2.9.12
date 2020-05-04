@@ -30,8 +30,9 @@ docker run -t -i nu11secur1ty/snort-2.9.12 /bin/bash
 ```
 docker run -it --rm --net=host nu11secur1ty/snort-2.9.12 /bin/bash
 ```
-
-Or you may need to add --cap-add=NET_ADMIN or --privileged (unsafe)
+***IMPORTANT:***
+You may need to add --cap-add=NET_ADMIN or --privileged (unsafe)
+[managing your network interface]
 
 ```
 docker run -it --rm --net=host --cap-add=NET_ADMIN nu11secur1ty/snort /bin/bash
