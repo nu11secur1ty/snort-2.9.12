@@ -36,7 +36,10 @@ RUN apt update && \
         bison \
         flex \
         libdnet \
-        vim && pip install -U pip dpkt snortunsock
+        python3 \
+        python3-pip \
+        vim 
+        # && pip install -U pip dpkt snortunsock
 
 # Define working directory.
 WORKDIR /opt
@@ -63,9 +66,9 @@ RUN ldconfig
 #     && unzip master.zip
 
 # snortunsock
-RUN wget --no-check-certificate \
-        https://github.com/John-Lin/snortunsock/archive/master.zip \
-    && unzip master.zip
+#RUN wget --no-check-certificate \
+#        https://github.com/John-Lin/snortunsock/archive/master.zip \
+#    && unzip master.zip
 
 # ENV SNORT_RULES_SNAPSHOT 2972
 # ADD snortrules-snapshot-${SNORT_RULES_SNAPSHOT} /opt
