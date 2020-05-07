@@ -6,7 +6,7 @@
 
 [Snort](https://www.snort.org/) in Docker for Network Functions Virtualization (NFV)
 
-The Snort Version 2.9.16 and DAQ Version 2.0.6
+The Snort Version 2.9.15 and DAQ Version 2.0.6
 
 # Docker Usage
 You may need to run as `sudo`
