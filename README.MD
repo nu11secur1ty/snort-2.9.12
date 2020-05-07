@@ -6,36 +6,34 @@
 
 [Snort](https://www.snort.org/) in Docker for Network Functions Virtualization (NFV)
 
-The Snort Version 2.9.12 and DAQ Version 2.0.6
-
-- - - Maintenance and testing on 2.9.16
+The Snort Version 2.9.16 and DAQ Version 2.0.6
 
 # Docker Usage
 You may need to run as `sudo`
 Attach the snort in container to have full access to the network
 
-- - - Pull snort-2.9.12-docker
+- - - Pull snort-2.9.16-docker
 
 ```bash
-docker pull nu11secur1ty/snort-2.9.12
+docker pull nu11secur1ty/snort-2.9.16
 ```
 
 - - - Loading and login:
 
 ```bash
-docker run -t -i nu11secur1ty/snort-2.9.12 /bin/bash
+docker run -t -i nu11secur1ty/snort-2.9.16 /bin/bash
 ```
 - - - Dirrect to `/opt/`
 
 ```
-docker run -it --rm --net=host nu11secur1ty/snort-2.9.12 /bin/bash
+docker run -it --rm --net=host nu11secur1ty/snort-2.9.16 /bin/bash
 ```
 ***IMPORTANT:***
 You may need to add --cap-add=NET_ADMIN or --privileged (unsafe)
 [managing your network interface]
 
 ```
-docker run -it --rm --net=host --cap-add=NET_ADMIN nu11secur1ty/snort-2.9.12 /bin/bash
+docker run -it --rm --net=host --cap-add=NET_ADMIN nu11secur1ty/snort-2.9.16 /bin/bash
 ```
 
 
