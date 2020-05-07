@@ -1,5 +1,6 @@
 # Snort 2.9.16
-FROM ubuntu:18.04
+# FROM ubuntu:18.04
+FROM ubuntu:20.10
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
