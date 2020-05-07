@@ -15,7 +15,7 @@ Attach the snort in container to have full access to the network
 - - - Pull snort-2.9.15-docker
 
 ```bash
-docker pull nu11secur1ty/snort-2.9.16
+docker pull nu11secur1ty/snort-2.9.15
 ```
 
 - - - Loading and login:
