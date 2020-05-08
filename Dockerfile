@@ -3,6 +3,8 @@ FROM ubuntu:18.04
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
+RUN apt update && apt -y upgrade
+RUN apt -y dist-upgrade
 RUN apt update && \
     apt install -y \
     gcc \
@@ -38,5 +40,3 @@ RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.ta
     && tar xvfz snort-${SNORT_VERSION}.tar.gz \
     && cd snort-${SNORT_VERSION} \
     && ./configure --enable-sourcefire; make; make install
-    
-    
