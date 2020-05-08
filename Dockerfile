@@ -40,6 +40,8 @@ RUN apt update && \
 # Define working directory.
 WORKDIR /opt
 
+RUN ldconfig
+
 ENV DAQ_VERSION 2.0.6
 RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz \
     && tar xvfz daq-${DAQ_VERSION}.tar.gz \
