@@ -64,8 +64,13 @@ RUN cp ~/snort_src/snort-2.9.12/etc/*.conf* /etc/snort
 RUN cp ~/snort_src/snort-2.9.12/etc/*.map /etc/snort
 
 # community rules
-RUN
+RUN wget https://www.snort.org/rules/community -O ~/community.tar.gz
+RUN tar -xvf ~/community.tar.gz -C ~/
+RUN cp ~/community-rules/* /etc/snort/rules
 
+RUN sed -i 's/include \$RULE\_PATH/#include \$RULE\_PATH/' /etc/snort/snort.conf
+
+# Obtaining registered user rules
 
  
 # Clean up APT when done.
