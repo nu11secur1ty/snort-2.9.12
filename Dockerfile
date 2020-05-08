@@ -24,10 +24,6 @@ RUN apt update && \
     vim \
     libdnet
 
-
-# Define working directory.
-WORKDIR /opt
-
 RUN ldconfig
 
 ENV DAQ_VERSION 2.0.6
