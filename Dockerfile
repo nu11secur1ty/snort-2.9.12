@@ -70,15 +70,13 @@ RUN cp ~/community-rules/* /etc/snort/rules
 
 RUN sed -i 's/include \$RULE\_PATH/#include \$RULE\_PATH/' /etc/snort/snort.conf
 
-# Obtaining registered user rules
-
  
 # Clean up APT when done.
-RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    /opt/snort-${SNORT_VERSION}.tar.gz /opt/daq-${DAQ_VERSION}.tar.gz
+# RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+#    /opt/snort-${SNORT_VERSION}.tar.gz /opt/daq-${DAQ_VERSION}.tar.gz
 
 
-ENV NETWORK_INTERFACE eth0
+# ENV NETWORK_INTERFACE eth0
 # Validate an installation
 # snort -T -i eth0 -c /etc/snort/etc/snort.conf
-CMD ["snort", "-T", "-i", "echo ${NETWORK_INTERFACE}", "-c", "/etc/snort/snort.conf"]
+#CMD ["snort", "-T", "-i", "echo ${NETWORK_INTERFACE}", "-c", "/etc/snort/snort.conf"]
