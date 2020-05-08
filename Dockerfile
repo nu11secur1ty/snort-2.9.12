@@ -41,12 +41,30 @@ RUN ldconfig
 RUN ln -s /usr/local/bin/snort /usr/sbin/snort
 RUN groupadd snort
 RUN useradd snort -r -s /sbin/nologin -c SNORT_IDS -g snort
+
 # Rules
 RUN mkdir -p /etc/snort/rules
 RUN mkdir /var/log/snort
 RUN mkdir /usr/local/lib/snort_dynamicrules
 
+# Permit
+RUN chmod -R 5775 /etc/snort
+RUN chmod -R 5775 /var/log/snort
+RUN chmod -R 5775 /usr/local/lib/snort_dynamicrules
+RUN chown -R snort:snort /etc/snort
+RUN chown -R snort:snort /var/log/snort
+RUN chown -R snort:snort /usr/local/lib/snort_dynamicrules
 
+# Create rules
+RUN touch /etc/snort/rules/white_list.rules
+RUN touch /etc/snort/rules/black_list.rules
+RUN touch /etc/snort/rules/local.rules
+
+RUN cp ~/snort_src/snort-2.9.12/etc/*.conf* /etc/snort
+RUN cp ~/snort_src/snort-2.9.12/etc/*.map /etc/snort
+
+# community rules
+RUN
 
 
  
