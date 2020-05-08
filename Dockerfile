@@ -3,39 +3,21 @@ FROM ubuntu:18.04
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
-RUN apt update && \
+RUN apt update && apt upgrade \
     apt install -y \
-        gcc \
-        net-tools \
-        python-setuptools \
-        python-pip \
-        python-dev \
-        wget \
-        build-essential \
-        bison \
-        flex \
-        libpcap-dev \
-        libpcre3-dev \
-        libdumbnet-dev \
-        zlib1g-dev \
-        iptables-dev \
-        libnetfilter-queue1 \
-        tcpdump \
-        unzip \
-        ## new version
-        # gcc \
-        # libpcre3-dev \ 
-        zlib1g-dev \
-        libluajit-5.1-dev \ 
-        # libpcap-dev \ 
-        openssl \
-        libssl-dev \
-        libnghttp2-dev \
-        # libdumbnet-dev \ 
-        bison \
-        flex \
-        libdnet \
-        vim && pip install -U pip dpkt snortunsock
+    gcc \
+    libpcre3-dev \
+    zlib1g-dev \
+    libluajit-5.1-dev \
+    libpcap-dev \
+    openssl \
+    libssl-dev \
+    libnghttp2-dev \
+    libdumbnet-dev \
+    bison \
+    flex \
+    libdnet
+
 
 # Define working directory.
 WORKDIR /opt
@@ -54,6 +36,8 @@ RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.ta
     && cd snort-${SNORT_VERSION} \
     && ./configure --enable-sourcefire; make; make install
 
+# Configuring Snort to run in NIDS mode
+RUN ldconfig
  
 # Clean up APT when done.
 RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
