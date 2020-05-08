@@ -38,6 +38,17 @@ RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.ta
 
 # Configuring Snort to run in NIDS mode
 RUN ldconfig
+RUN ln -s /usr/local/bin/snort /usr/sbin/snort
+RUN groupadd snort
+RUN useradd snort -r -s /sbin/nologin -c SNORT_IDS -g snort
+# Rules
+RUN mkdir -p /etc/snort/rules
+RUN mkdir /var/log/snort
+RUN mkdir /usr/local/lib/snort_dynamicrules
+
+
+
+
  
 # Clean up APT when done.
 RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
