@@ -16,6 +16,7 @@ RUN apt update && \
     libdumbnet-dev \
     bison \
     flex \
+    wget \
     libdnet
 
 
