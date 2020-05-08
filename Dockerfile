@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
-RUN apt update && apt upgrade \
+RUN apt update && \
     apt install -y \
     gcc \
     libpcre3-dev \
