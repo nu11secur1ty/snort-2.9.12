@@ -51,7 +51,7 @@ Running Snort and alerts output to the console (screen).
 - - - ***NOTE:*** Use your network interface
 
 ```
-$ snort -i wlan0 -c /etc/snort/etc/snort.conf -A console
+snort -i wlan0 -c /etc/snort/etc/snort.conf -A console
 ```
 
 Running Snort and alerts output to the UNIX socket
