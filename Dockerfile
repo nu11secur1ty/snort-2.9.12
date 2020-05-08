@@ -21,6 +21,7 @@ RUN apt update && \
     wget \
     cmake \
     make \
+    vim \
     libdnet
 
 
