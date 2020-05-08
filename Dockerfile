@@ -1,5 +1,5 @@
 # Snort 
-FROM ubuntu:19.10
+FROM ubuntu:18.04
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
