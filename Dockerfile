@@ -22,16 +22,11 @@ RUN apt update && \
         libnetfilter-queue1 \
         tcpdump \
         unzip \
-        ## new version
-        # gcc \
-        # libpcre3-dev \ 
         zlib1g-dev \
-        libluajit-5.1-dev \ 
-        # libpcap-dev \ 
+        libluajit-5.1-dev \  
         openssl \
         libssl-dev \
         libnghttp2-dev \
-        # libdumbnet-dev \ 
         bison \
         flex \
         libdnet \
