@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Snort 
 FROM centos:7
 MAINTAINER V.Varbanovski @nu11secur1ty <penetrateoffensive@gmail.com>
@@ -27,12 +26,3 @@ COPY data/snort.conf /etc/snort/snort.conf
 
 ENTRYPOINT ["snort"]
 CMD ["--help"]
-=======
-# snort
-FROM ubuntu:20.04
-MAINTAINER V.Varbanovski <penetrateoffensive@gmail.com>
-
-RUN apt update -y
-RUN apt upgrade -y
-RUN apt install snort -y
->>>>>>> 8f698eba0d548f7830bf8f6366f2a885b200a74b
