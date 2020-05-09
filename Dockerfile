@@ -51,8 +51,8 @@ RUN ldconfig
 
 # snortunsock
 RUN wget --no-check-certificate \
-       https://github.com/nu11secur1ty/snort-2.9.12/snortunsock/archive/master.zip \
-    && unzip master.zip
+       https://github.com/nu11secur1ty/snort-2.9.12/blob/master/pireplay.zip \
+    && unzip pireplay.zip
 
 # ENV SNORT_RULES_SNAPSHOT 2972
 ADD mysnortrules /opt
