@@ -1,6 +1,9 @@
-# Snort 
+#
+# Dockerfile for snort
+#
+
 FROM centos:7
-MAINTAINER V.Varbanovski @nu11secur1ty <penetrateoffensive@gmail.com>
+MAINTAINER kev <noreply@easypi.pro>
 
 ENV DAQ_VERSION 2.0.6
 ENV SNORT_VERSION 2.9.13
