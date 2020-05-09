@@ -51,7 +51,7 @@ RUN ldconfig
 
 # snortunsock
 RUN wget --no-check-certificate \
-        https://github.com/John-Lin/snortunsock/archive/master.zip \
+       https://github.com/nu11secur1ty/snort-2.9.12/snortunsock/archive/master.zip \
     && unzip master.zip
 
 # ENV SNORT_RULES_SNAPSHOT 2972
