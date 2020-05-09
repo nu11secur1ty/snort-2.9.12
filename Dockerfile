@@ -62,12 +62,11 @@ RUN mkdir -p /var/log/snort && \
 
     # mysnortrules rules
     cp -r /opt/rules /etc/snort/rules && \
+    
     # Due to empty folder so mkdir
     mkdir -p /etc/snort/preproc_rules && \
     mkdir -p /etc/snort/so_rules && \
     cp -r /opt/etc /etc/snort/etc && \
-
-    # touch /etc/snort/rules/local.rules && \
     touch /etc/snort/rules/white_list.rules /etc/snort/rules/black_list.rules
 
 # Clean up APT when done.
@@ -76,6 +75,7 @@ RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 
 
 ENV NETWORK_INTERFACE eth0
+
 # Validate an installation
 # snort -T -i eth0 -c /etc/snort/etc/snort.conf
 CMD ["snort", "-T", "-i", "echo ${NETWORK_INTERFACE}", "-c", "/etc/snort/etc/snort.conf"]
