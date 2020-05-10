@@ -7,8 +7,8 @@
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
-RUN apt update && \
-    apt install -y \
+RUN apt update 
+RUN apt install -y \
         gcc \
         net-tools \
         python-setuptools \
