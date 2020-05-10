@@ -32,7 +32,9 @@ RUN apt-get install -y \
         bison \
         flex \
         libdnet \
-        vim 
+        vim \
+        make \
+        cmake
     RUN pip install -U pip dpkt snortunsock
 
 # Define working directory.
