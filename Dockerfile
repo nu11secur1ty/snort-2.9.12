@@ -3,8 +3,9 @@ FROM ubuntu:19.10
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get install -y \
         gcc \
         net-tools \
         python-setuptools \
@@ -30,7 +31,8 @@ RUN apt-get update && \
         bison \
         flex \
         libdnet \
-        vim && pip install -U pip dpkt snortunsock
+        vim 
+    RUN pip install -U pip dpkt snortunsock
 
 # Define working directory.
 WORKDIR /opt
@@ -50,24 +52,23 @@ RUN cd snort-${SNORT_VERSION}
 RUN ldconfig
 
 # snortunsock
-RUN wget --no-check-certificate \
-       https://github.com/nu11secur1ty/snort-2.9.12/raw/master/pireplay.zip \
-    && unzip pireplay.zip
+RUN wget --no-check-certificate https://github.com/nu11secur1ty/snort-2.9.12/raw/master/pireplay.zip 
+RUN unzip pireplay.zip
 
 # ENV SNORT_RULES_SNAPSHOT 2972
 ADD mysnortrules /opt
-RUN mkdir -p /var/log/snort && \
-    mkdir -p /usr/local/lib/snort_dynamicrules && \
-    mkdir -p /etc/snort && \
+RUN mkdir -p /var/log/snort 
+RUN mkdir -p /usr/local/lib/snort_dynamicrules 
+RUN mkdir -p /etc/snort 
 
     # mysnortrules rules
-    cp -r /opt/rules /etc/snort/rules && \
+RUN cp -r /opt/rules /etc/snort/rules 
     
     # Due to empty folder so mkdir
-    mkdir -p /etc/snort/preproc_rules && \
-    mkdir -p /etc/snort/so_rules && \
-    cp -r /opt/etc /etc/snort/etc && \
-    touch /etc/snort/rules/white_list.rules /etc/snort/rules/black_list.rules
+RUN mkdir -p /etc/snort/preproc_rules 
+RUN mkdir -p /etc/snort/so_rules 
+RUN cp -r /opt/etc /etc/snort/etc 
+RUN touch /etc/snort/rules/white_list.rules /etc/snort/rules/black_list.rules
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
