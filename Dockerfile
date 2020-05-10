@@ -60,7 +60,7 @@ RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz
     && tar xvfz daq-${DAQ_VERSION}.tar.gz \
     && cd daq-${DAQ_VERSION} \
     && ./configure 
-RUN make /opt/daq-2.0.6/ \
+RUN make /opt/daq-2.0.6 \
     && make install
 
 ENV SNORT_VERSION 2.9.12
