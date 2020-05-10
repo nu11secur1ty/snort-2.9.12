@@ -41,13 +41,13 @@ ENV DAQ_VERSION 2.0.6
 RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz 
 RUN tar xvfz daq-${DAQ_VERSION}.tar.gz 
 RUN cd daq-${DAQ_VERSION} 
-    && ./configure; make; make install
+RUN ./configure; make; make install
 
 ENV SNORT_VERSION 2.9.12
 RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz 
 RUN tar -xvfz snort-${SNORT_VERSION}.tar.gz 
 RUN cd snort-${SNORT_VERSION} 
-    && ./configure --enable-sourcefire; make; make install
+RUN ./configure --enable-sourcefire; make; make install
 
 RUN ldconfig
 
