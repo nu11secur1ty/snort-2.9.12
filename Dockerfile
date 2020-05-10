@@ -42,15 +42,15 @@ RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz
 RUN tar xvfz daq-${DAQ_VERSION}.tar.gz 
 RUN cd daq-${DAQ_VERSION} 
 RUN ./configure 
-RUN  make  
-RUN  make install
+RUN make  
+RUN make install
 
 ENV SNORT_VERSION 2.9.12
 RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz 
 RUN tar -xvfz snort-${SNORT_VERSION}.tar.gz 
 RUN cd snort-${SNORT_VERSION} 
 RUN ./configure --enable-sourcefire 
-RUN  make 
+RUN make 
 RUN make install
 
 RUN ldconfig
