@@ -8,7 +8,7 @@
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
 RUN apt update 
-RUN apt -y install \
+RUN apt install \
         gcc \
         net-tools \
         python-setuptools \
@@ -36,7 +36,7 @@ RUN apt -y install \
         libdnet \
         vim \
         make \
-        cmake
+        cmake -y
     RUN pip install -U pip dpkt snortunsock
 
 # Define working directory.
