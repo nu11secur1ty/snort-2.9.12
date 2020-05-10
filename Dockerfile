@@ -7,9 +7,9 @@
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get install -y \
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install -y \
         gcc \
         net-tools \
         python-setuptools \
@@ -79,7 +79,7 @@ RUN cp -r /opt/etc /etc/snort/etc
 RUN touch /etc/snort/rules/white_list.rules /etc/snort/rules/black_list.rules
 
 # Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     /opt/snort-${SNORT_VERSION}.tar.gz /opt/daq-${DAQ_VERSION}.tar.gz
 
 
