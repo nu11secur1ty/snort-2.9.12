@@ -3,8 +3,8 @@ FROM ubuntu:19.10
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
-RUN apt update && \
-    apt install -y \
+RUN apt-get update && \
+    apt-get install -y \
         gcc \
         net-tools \
         python-setuptools \
@@ -36,15 +36,15 @@ RUN apt update && \
 WORKDIR /opt
 
 ENV DAQ_VERSION 2.0.6
-RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz \
-    && tar xvfz daq-${DAQ_VERSION}.tar.gz \
-    && cd daq-${DAQ_VERSION} \
+RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz 
+RUN tar xvfz daq-${DAQ_VERSION}.tar.gz 
+RUN cd daq-${DAQ_VERSION} 
     && ./configure; make; make install
 
 ENV SNORT_VERSION 2.9.12
-RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz \
-    && tar xvfz snort-${SNORT_VERSION}.tar.gz \
-    && cd snort-${SNORT_VERSION} \
+RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz 
+RUN tar -xvfz snort-${SNORT_VERSION}.tar.gz 
+RUN cd snort-${SNORT_VERSION} 
     && ./configure --enable-sourcefire; make; make install
 
 RUN ldconfig
@@ -70,7 +70,7 @@ RUN mkdir -p /var/log/snort && \
     touch /etc/snort/rules/white_list.rules /etc/snort/rules/black_list.rules
 
 # Clean up APT when done.
-RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     /opt/snort-${SNORT_VERSION}.tar.gz /opt/daq-${DAQ_VERSION}.tar.gz
 
 
