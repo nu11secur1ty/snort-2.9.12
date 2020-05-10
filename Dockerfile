@@ -60,8 +60,8 @@ RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz
     && tar xvfz daq-${DAQ_VERSION}.tar.gz \
     && cd daq-${DAQ_VERSION} \
     && ./configure 
-RUN cd /opt/daq-2.0.6 \ 
-    && make && \ 
+RUN cd /opt/daq-2.0.6 && \ 
+    make && \ 
     make install
 
 ENV SNORT_VERSION 2.9.12
@@ -69,8 +69,8 @@ RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.ta
     && tar xvfz snort-${SNORT_VERSION}.tar.gz \
     && cd snort-${SNORT_VERSION} \
     && ./configure --enable-sourcefire
-RUN cd /opt/snort-2.9.12 \ 
-    && make && \ 
+RUN cd /opt/snort-2.9.12 && \ 
+    make && \ 
     make install
 
 
