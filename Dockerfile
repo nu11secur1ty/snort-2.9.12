@@ -38,7 +38,7 @@ RUN apt-get install -y \
 # Define working directory.
 WORKDIR /opt
 
-ENV DAQ_VERSION 2.0.6
+ENV DAQ_VERSION 2.0.7
 RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz 
 RUN tar xvfz daq-${DAQ_VERSION}.tar.gz 
 RUN cd daq-${DAQ_VERSION} 
