@@ -1,4 +1,5 @@
 # Snort 
+# FROM ubuntu:18.04
 FROM ubuntu:19.10
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
@@ -45,7 +46,7 @@ RUN ./configure
 RUN make  
 RUN make install
 
-ENV SNORT_VERSION 2.9.12
+ENV SNORT_VERSION 2.9.13
 RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz 
 RUN tar -xvfz snort-${SNORT_VERSION}.tar.gz 
 RUN cd snort-${SNORT_VERSION} 
