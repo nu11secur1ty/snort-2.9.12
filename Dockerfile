@@ -1,6 +1,6 @@
 # Snort 
-FROM ubuntu:18.04
-# FROM ubuntu:19.10
+# FROM ubuntu:18.04
+ FROM ubuntu:19.10
 # FROM ubuntu:20.04
 # FROM ubuntu:20.10
 
@@ -42,17 +42,36 @@ RUN apt-get install -y \
 # Define working directory.
 WORKDIR /opt
 
+#ENV DAQ_VERSION 2.0.6
+#RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz \
+#    && tar xvfz daq-${DAQ_VERSION}.tar.gz \
+#    && cd daq-${DAQ_VERSION} \
+#    && ./configure; make; make install
+
+#ENV SNORT_VERSION 2.9.12
+#RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz \
+#    && tar xvfz snort-${SNORT_VERSION}.tar.gz \
+#    && cd snort-${SNORT_VERSION} \
+#    && ./configure --enable-sourcefire; make; make install
+###################################################################3
+
 ENV DAQ_VERSION 2.0.6
 RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz \
     && tar xvfz daq-${DAQ_VERSION}.tar.gz \
     && cd daq-${DAQ_VERSION} \
-    && ./configure; make; make install
+    && ./configure 
+RUN make 
+RUN make install
 
 ENV SNORT_VERSION 2.9.12
 RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz \
     && tar xvfz snort-${SNORT_VERSION}.tar.gz \
     && cd snort-${SNORT_VERSION} \
-    && ./configure --enable-sourcefire; make; make install
+    && ./configure --enable-sourcefire
+RUN make \ 
+RUN make install
+
+
 
 RUN ldconfig
 
