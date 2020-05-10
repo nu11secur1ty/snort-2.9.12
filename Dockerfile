@@ -7,8 +7,9 @@
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
-RUN apt-get update &&
-        apt-get -y install \
+RUN apt update -y
+RUN apt dist-upgrade -y
+RUN apt install -y nmap \
         gcc \
         net-tools \
         python-setuptools \
