@@ -37,7 +37,7 @@ RUN apt install -y nmap \
         libdnet \
         vim \
         make \
-        cmake -y
+        cmake 
     RUN pip install -U pip dpkt snortunsock
 
 # Define working directory.
