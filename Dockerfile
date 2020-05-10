@@ -51,7 +51,7 @@ RUN wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz
     #&& ./configure; make; make install
     && ./configure && make && sudo make install
 
-ENV SNORT_VERSION 2.9.16
+ENV SNORT_VERSION 2.9.15
 RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz \
     && tar xvfz snort-${SNORT_VERSION}.tar.gz \
     && cd snort-${SNORT_VERSION} \
