@@ -4,11 +4,13 @@ Modified generic daemon class
 ***
 
 Author:         http://www.jejik.com/articles/2007/02/
+                        development: https://www.nu11secur1ty.com/
                         a_simple_unix_linux_daemon_in_python/www.boxedice.com
 
 License:        http://creativecommons.org/licenses/by-sa/3.0/
 
-Changes:        23rd Jan 2009 (David Mytton <david@boxedice.com>)
+Changes:          2020 (Ventsislav Varbanovski <penettrateoffensive@gmail.com>
+                  23rd Jan 2009 (David Mytton <david@boxedice.com>)
                 - Replaced hard coded '/dev/null in __init__ with os.devnull
                 - Added OS check to conditionally remove code that doesn't
                   work on OS X
