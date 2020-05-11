@@ -1,10 +1,5 @@
-# Snort 
-# FROM ubuntu:18.04
-# FROM ubuntu:19.10
-# FROM ubuntu:latest
- FROM debian:latest
-# FROM ubuntu:20.04
-# FROM ubuntu:20.10
+# Snort-2.9.12 
+FROM debian:latest
 
 MAINTAINER Ventsislav Varbanovski <penetrateoffensive@gmail.com>
 
