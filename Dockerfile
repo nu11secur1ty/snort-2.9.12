@@ -51,7 +51,7 @@ RUN wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.ta
     && cd snort-${SNORT_VERSION} \
     && ./configure --enable-sourcefire; make; make install
     
-###################################################################
+# Managing
 
 RUN ldconfig
 
