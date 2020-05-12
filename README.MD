@@ -1,4 +1,4 @@
-# snort-2.9.12-secmon
+# snort-2.9.12
 
 ![](https://github.com/nu11secur1ty/snort/blob/master/logo/586e6b2cc2d41da57a33ca0d.png)
 
