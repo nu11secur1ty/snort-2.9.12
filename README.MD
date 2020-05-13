@@ -12,18 +12,18 @@ The Snort Version 2.9.12 and DAQ Version 2.0.6
 You may need to run as `sudo`
 Attach the snort in container to have full access to the network
 
-- - - Pull snort-2.9.12-docker
+- Pull snort-2.9.12-docker
 
 ```bash
 docker pull nu11secur1ty/snort-2.9.12
 ```
 
-- - - Loading and login:
+- Loading and login:
 
 ```bash
 docker run -t -i nu11secur1ty/snort-2.9.12 /bin/bash
 ```
-- - - Dirrect to `/opt/`
+- Dirrect to `/opt/`
 
 ```
 docker run -it --rm --net=host nu11secur1ty/snort-2.9.12 /bin/bash
@@ -48,7 +48,7 @@ For testing it's work. Add this rule in the file at `/etc/snort/rules/local.rule
 Running Snort and alerts output to the console (screen).
 
 
-- - - ***NOTE:*** Use your network interface
+- ***NOTE:*** Use your network interface
 
 ```
 snort -i wlan0 -c /etc/snort/etc/snort.conf -A console
